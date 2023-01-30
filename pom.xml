@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example</groupId>
     <version>1.0-SNAPSHOT</version>
-    <artifactId>Projeto-de-Integracao-Eletra-2-Front-end</artifactId>
+    <artifactId>Projeto-de-Integracao-Eletra-3-Front-end</artifactId>
     <packaging>jar</packaging>
 
 
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.example</groupId>
             <version>1.0</version>
-            <artifactId>Projeto-de-Integracao-Eletra-2-Back-end</artifactId>
+            <artifactId>Projeto-de-Integracao-Eletra-3-Back-end</artifactId>
             <scope>compile</scope>
         </dependency>
     </dependencies>
