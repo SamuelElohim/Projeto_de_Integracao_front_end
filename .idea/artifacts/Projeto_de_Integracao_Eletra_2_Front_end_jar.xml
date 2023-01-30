@@ -1,0 +1,32 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Projeto-de-Integracao-Eletra-2-Front-end:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Projeto_de_Integracao_Eletra_2_Front_end_jar</output-path>
+    <root id="archive" name="Projeto-de-Integracao-Eletra-2-Front-end.jar">
+      <element id="module-output" name="Projeto-de-Integracao-Eletra-2-Front-end" />
+      <element id="module-output" name="Projeto-de-Integracao-Eletra-2-Back-end" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/logging/2.7.0.Final/logging-2.7.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/container/2.7.0.Final/container-2.7.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-javaee/2.0.0/shrinkwrap-descriptors-impl-javaee-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-spi/2.0.0/shrinkwrap-descriptors-spi-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/shrinkwrap-api/1.2.6/shrinkwrap-api-1.2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/wildfly/common/wildfly-common/1.5.1.Final/wildfly-common-1.5.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/config-api-runtime/2.7.0/config-api-runtime-2.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/javafx/2.7.0.Final/javafx-2.7.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-javaee/2.0.0/shrinkwrap-descriptors-api-javaee-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/bootstrap/2.7.0.Final/bootstrap-2.7.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/shrinkwrap-spi/1.2.6/shrinkwrap-spi-1.2.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-base/2.0.0/shrinkwrap-descriptors-api-base-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/ow2/asm/asm/7.1/asm-7.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/meta-spi/2.7.0.Final/meta-spi-2.7.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/spi/2.7.0.Final/spi-2.7.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/config-api/2.7.0/config-api-2.7.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-jboss/2.0.0/shrinkwrap-descriptors-impl-jboss-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/jandex/2.1.2.Final/jandex-2.1.2.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-api-jboss/2.0.0/shrinkwrap-descriptors-api-jboss-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/io/thorntail/jdk-specific/thorntail-jdk-specific/2/thorntail-jdk-specific-2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/descriptors/shrinkwrap-descriptors-impl-base/2.0.0/shrinkwrap-descriptors-impl-base-2.0.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/shrinkwrap/shrinkwrap-impl-base/1.2.6/shrinkwrap-impl-base-1.2.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

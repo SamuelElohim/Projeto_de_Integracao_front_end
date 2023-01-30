@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Projeto-de-Integracao-Eletra-2-Front-end:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Projeto-de-Integracao-Eletra-2-Back-end" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2KHTiXDTMaEN6igObtYiWKCikhh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Samuel Conrado/Desktop/Projeto_de_Integracao_2/Projeto-de-Integracao-Eletra-2-Front-end/src/main&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.18735632&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Samuel Conrado\Desktop\Projeto_de_Integracao_2\Projeto-de-Integracao-Eletra-2-Front-end\src\main\Java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-Integracao-Eletra-2\Projeto-de-Integracao-Eletra-2-Back-end\src\java" />
+      <recent name="C:\Users\Samuel Conrado\Desktop\Projeto_de_Integracao_2\Projeto-de-Integracao-Eletra-2-Front-end\src\main\java" />
+      <recent name="C:\Users\Samuel Conrado\Desktop\Projeto_de_Integracao_2\Projeto-de-Integracao-Eletra-2-Front-end\src\main\java\controller" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn jar:jar install:install" />
+      <command value="mvn  idea:idea" />
+      <command value="mvn clean" />
+      <command value="mvn clean install" />
+      <command value="mvn clean package" />
+      <command value="mvn clean " />
+    </option>
+  </component>
+  <component name="RunManager" selected="JAR Application.Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT-jar-with-dependencies.jar">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Projeto-de-Integracao-Eletra-2-Front-end" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="Projeto-de-Integracao-Eletra-2-Front-end" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.java.controller.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.controller.Main" />
+      <module name="Projeto-de-Integracao-Eletra-2-Front-end" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT-jar-with-dependencies.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT-jar-with-dependencies.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT-jar-with-dependencies.jar" />
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.main.Main" />
+        <item itemvalue="JAR Application.Projeto-de-Integracao-Eletra-2-Front-end-1.0-SNAPSHOT.jar" />
+        <item itemvalue="Application.main.java.controller.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="" />
+      <created>1673630637565</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1673630637565</updated>
+    </task>
+    <servers />
+  </component>
+</project>
