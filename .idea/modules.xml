@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/projeto-de-integracao.iml" filepath="$PROJECT_DIR$/projeto-de-integracao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Projeto-de-Integracao-Eletra-2-Back-end/Projeto-de-Integracao-Eletra-2-Back-end.iml" filepath="$PROJECT_DIR$/../Projeto-de-Integracao-Eletra-2-Back-end/Projeto-de-Integracao-Eletra-2-Back-end.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Projeto-de-Integracao-Eletra-2-Front-end.iml" filepath="$PROJECT_DIR$/Projeto-de-Integracao-Eletra-2-Front-end.iml" />
     </modules>
   </component>
 </project>

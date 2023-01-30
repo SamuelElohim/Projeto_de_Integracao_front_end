@@ -1,1 +1,1 @@
-# Projeto de integração de novos colaboradores
+# Front-end do projeto 2 de Integração de Novos Colaboradores
