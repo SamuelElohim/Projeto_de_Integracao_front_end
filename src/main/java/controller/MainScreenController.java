@@ -3,9 +3,12 @@ package controller;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import model.Category;
-import model.Line;
-import model.Model;
+import model.*;
+import hibernate.HibernateUtil;
+import org.hibernate.Session;
+
+import java.util.List;
+
 
 public class MainScreenController {
 
@@ -24,13 +27,17 @@ public class MainScreenController {
     @FXML
     private TitledPane titledPaneModels;
 
+    public Session session = HibernateUtil.getSessionFactory().openSession();
+
     @FXML
     void initialize() {
 
         accordion.setExpandedPane(titledPaneLines);
         titledPaneModels.setDisable(true);
 
-        lineSelector.setItems(FXCollections.observableArrayList(Line.values()));
+
+        List<Line> lineList = session.createQuery("FROM Line").list();
+        lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
 
     }
@@ -45,20 +52,22 @@ public class MainScreenController {
     void fillTreeView() {
         TreeItem root = new TreeItem();
 
-        Line lineSelected = lineSelector.getValue();
-        for (Category category: Category.values()) {
-            if(category.getLine().equals(lineSelected)) {
-                TreeItem item = new TreeItem<>(category);
-                root.getChildren().add(item);
-                for (Model model : Model.values()) {
-                    if(model.getCategory().getLine().equals(lineSelected)
-                    && model.getCategory().equals(category)) {
-                        TreeItem modelo = new TreeItem(model);
-                        item.getChildren().add(modelo);
-                    }
-                }
+        String lineSelected = lineSelector.getValue().toString();
+        List<Category> categoryList= session.
+                createQuery(String.format("FROM Category WHERE line_id = '%s'", lineSelected)).list();
+
+        for (Category category: categoryList) {
+            TreeItem item = new TreeItem<>(category);
+            root.getChildren().add(item);
+
+            List<Model> modelList= session.
+                    createQuery(String.format("FROM Model WHERE category_id = '%s'", category)).list();
+            for (Model model : modelList) {
+                    TreeItem modelo = new TreeItem(model);
+                    item.getChildren().add(modelo);
             }
         }
+
 
         root.setValue(lineSelected);
         root.setExpanded(true);
