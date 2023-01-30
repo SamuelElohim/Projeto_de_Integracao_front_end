@@ -1,11 +1,11 @@
 package controller;
 
-import model.Category;
-import model.Line;
-import model.Model;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import model.Category;
+import model.Line;
+import model.Model;
 
 public class MainScreenController {
 
