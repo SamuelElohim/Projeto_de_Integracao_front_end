@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Projeto-de-Integracao-Eletra-3-Back-end" />
-        <module name="Projeto-de-Integracao-Eletra-3-Front-end" />
+        <module name="Projeto_de_integracao_back_end" />
+        <module name="Projeto_de_Integracao_front_end" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Back-End" target="1.8" />
       <module name="Projeto-de-Integracao-Eletra-2-Back-end" target="1.8" />
       <module name="Projeto-de-Integracao-Eletra-2-Front-end" target="1.8" />
+      <module name="Projeto-de-Integracao-Eletra-3-Back-end" target="1.8" />
+      <module name="Projeto-de-Integracao-Eletra-3-Front-end" target="1.8" />
+      <module name="Projeto-de-Integracao-Eletra-front-end" target="1.8" />
+      <module name="Projeto-de-Integracao-front-end" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
