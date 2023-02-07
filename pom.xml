@@ -27,7 +27,7 @@
                     <mainClass>MainClass</mainClass>
                     <vendor>Eletra Energy Solutions</vendor>
                     <verbose>true</verbose>
-                    <appName>Projeto_de_Integracao_front_end</appName>
+                    <appName>Projeto_de_Integracao</appName>
                 </configuration>
                 <executions>
                     <execution>
