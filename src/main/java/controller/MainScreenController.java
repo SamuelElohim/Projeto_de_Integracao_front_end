@@ -4,16 +4,18 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.*;
-import hibernate.HibernateUtil;
+import hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
 public class MainScreenController {
 
     @FXML
-    private ComboBox<Line> lineSelector;
+    private ComboBox<LineEntity> lineSelector;
 
     @FXML
     private TreeView modelSelector;
@@ -36,7 +38,7 @@ public class MainScreenController {
         titledPaneModels.setDisable(true);
 
 
-        List<Line> lineList = session.createQuery("FROM Line").list();
+        List<LineEntity> lineList = session.createQuery("FROM LineEntity ORDER BY name ASC").list();
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
 
@@ -51,23 +53,29 @@ public class MainScreenController {
 
     void fillTreeView() {
         TreeItem root = new TreeItem();
+        List<TreeItem> categoryItems = new ArrayList<>();
 
         String lineSelected = lineSelector.getValue().toString();
-        List<Category> categoryList= session.
-                createQuery(String.format("FROM Category WHERE line_id = '%s'", lineSelected)).list();
 
-        for (Category category: categoryList) {
-            TreeItem item = new TreeItem<>(category);
-            root.getChildren().add(item);
+        List<CategoryEntity> categoryList= session.
+                createQuery("FROM CategoryEntity WHERE line_id = :lineSelected")
+                .setParameter("lineSelected", lineSelected)
+                .list();
+        categoryList.forEach(category -> {
+            TreeItem categoryItem = new TreeItem<>(category);
+            root.getChildren().add(categoryItem);
 
-            List<Model> modelList= session.
-                    createQuery(String.format("FROM Model WHERE category_id = '%s'", category)).list();
-            for (Model model : modelList) {
-                    TreeItem modelo = new TreeItem(model);
-                    item.getChildren().add(modelo);
-            }
-        }
+            List<ModelEntity> modelList= session.
+                    createQuery("FROM ModelEntity WHERE category_id = :category")
+                    .setParameter("category", category)
+                    .list();
 
+            modelList.forEach(model -> {
+                TreeItem modelItem = new TreeItem(model);
+                categoryItem.getChildren().add(modelItem);
+            });
+
+        });
 
         root.setValue(lineSelected);
         root.setExpanded(true);
