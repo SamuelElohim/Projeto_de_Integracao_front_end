@@ -87,7 +87,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.HibernateTest">
+  <component name="RunManager" selected="Application.MainClass (1)">
     <configuration name="HibernateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HibernateTest" />
       <module name="Projeto_de_integracao_back_end" />
@@ -131,8 +131,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HibernateTest" />
         <item itemvalue="Application.MainClass (1)" />
+        <item itemvalue="Application.HibernateTest" />
         <item itemvalue="JAR Application.Projeto_de_Integracao_front_end-1.0-SNAPSHOT-jfx.jar" />
         <item itemvalue="JAR Application.Projeto_de_Integracao_front_end-1.0-SNAPSHOT.jar" />
         <item itemvalue="JAR Application.Projeto_de_Integracao_front_end-1.0-SNAPSHOT-jar-with-dependencies.jar" />
