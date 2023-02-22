@@ -1,16 +1,13 @@
 package controller;
 
-import javafx.collections.FXCollections;
-import javafx.fxml.FXML;
+import java.util.List;
+import hibernate.util.HibernateSession;
 import javafx.scene.control.*;
 import model.*;
-import hibernate.util.HibernateUtil;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+
 import org.hibernate.Session;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 
 public class MainScreenController {
 
@@ -29,7 +26,7 @@ public class MainScreenController {
     @FXML
     private TitledPane titledPaneModels;
 
-    public Session session = HibernateUtil.getSessionFactory().openSession();
+    public Session session = HibernateSession.getSessionInstance();
 
     @FXML
     void initialize() {
@@ -37,8 +34,8 @@ public class MainScreenController {
         accordion.setExpandedPane(titledPaneLines);
         titledPaneModels.setDisable(true);
 
+        List<LineEntity> lineList = getDatabaseList(LineEntity.class);
 
-        List<LineEntity> lineList = session.createQuery("FROM LineEntity ORDER BY name ASC").list();
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
 
@@ -52,35 +49,48 @@ public class MainScreenController {
     }
 
     void fillTreeView() {
-        TreeItem root = new TreeItem();
-        List<TreeItem> categoryItems = new ArrayList<>();
-
         String lineSelected = lineSelector.getValue().toString();
+        TreeItem root = new TreeItem(lineSelected);
 
-        List<CategoryEntity> categoryList= session.
-                createQuery("FROM CategoryEntity WHERE line_id = :lineSelected")
-                .setParameter("lineSelected", lineSelected)
-                .list();
-        categoryList.forEach(category -> {
-            TreeItem categoryItem = new TreeItem<>(category);
+        List<CategoryEntity> categoryList = getFilteredDatabaseList(
+                CategoryEntity.class, "line_id", lineSelected);
+
+        categoryList.forEach(categoryListItem -> {
+            TreeItem categoryItem = new TreeItem<>(categoryListItem);
             root.getChildren().add(categoryItem);
 
-            List<ModelEntity> modelList= session.
-                    createQuery("FROM ModelEntity WHERE category_id = :category")
-                    .setParameter("category", category)
-                    .list();
+            List<ModelEntity> modelList= getFilteredDatabaseList(
+                    ModelEntity.class, "category_id", categoryListItem);
 
             modelList.forEach(model -> {
                 TreeItem modelItem = new TreeItem(model);
                 categoryItem.getChildren().add(modelItem);
             });
-
         });
 
         root.setValue(lineSelected);
         root.setExpanded(true);
         modelSelector.setRoot(root);
 
+    }
+
+    <T extends EntityInterface> List<T> getDatabaseList(Class<T> entityClass) {
+        List<T> entityList = session.createQuery(
+                        String.format("FROM %s", entityClass.getSimpleName()))
+                .list();
+
+        return entityList;
+    }
+
+    <T extends EntityInterface> List<T> getFilteredDatabaseList(Class<T> entityClass, String columnName, Object filterObject) {
+        List<T> entityList = session.createQuery(
+                        String.format("FROM %s WHERE %s = '%s'",
+                                entityClass.getSimpleName(),
+                                columnName,
+                                filterObject.toString()))
+                .list();
+
+        return entityList;
     }
 
 }
