@@ -1,8 +1,20 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.List;
+
+import com.google.gson.GsonBuilder;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import com.google.gson.Gson;
+import model.LineEntity;
+import model.ModelEntity;
+
 
 public class MainClass extends Application {
 
@@ -10,8 +22,10 @@ public class MainClass extends Application {
         launch(args);
     }
 
+
     @Override
     public void start(Stage stage) throws Exception {
+
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("/view/MainScreen.fxml"));
         stage.getIcons().add(new Image("view/Eletra_Icon.png"));
 
