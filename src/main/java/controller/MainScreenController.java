@@ -21,7 +21,7 @@ import model.*;
 public class MainScreenController {
 
     @FXML
-    private ComboBox<LineEntity> lineSelector;
+    private ComboBox<AbstractEntity> lineSelector;
 
     @FXML
     private TreeView modelSelector;
@@ -42,10 +42,7 @@ public class MainScreenController {
         titledPaneModels.setDisable(true);
 
 
-        List<LineEntity> lineList = Arrays.asList(new Gson().fromJson(getDatabaseJSONString("linhas"), LineEntity[].class));
-
-        System.out.println(getDatabaseJSONString("linhas"));
-        System.out.println(getDatabaseJSONString("modelos", "cronos ng"));
+        List<LineEntity> lineList = LineEntity.getDatabaseList();
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
@@ -63,15 +60,13 @@ public class MainScreenController {
         String lineSelected = lineSelector.getValue().toString();
         TreeItem root = new TreeItem(lineSelected);
 
-        List<CategoryEntity> categoryList =
-                Arrays.asList(new Gson().fromJson(getDatabaseJSONString("categorias",lineSelected), CategoryEntity[].class));
+        List<CategoryEntity> categoryList = CategoryEntity.getDatabaseList(lineSelected);
 
         categoryList.forEach(categoryListItem -> {
             TreeItem categoryItem = new TreeItem<>(categoryListItem);
             root.getChildren().add(categoryItem);
 
-            List<ModelEntity> modelList=
-                    Arrays.asList(new Gson().fromJson(getDatabaseJSONString("modelos",categoryListItem.toString()), ModelEntity[].class));
+            List<ModelEntity> modelList = ModelEntity.getDatabaseList(categoryListItem.toString());
 
             modelList.forEach(model -> {
                 TreeItem modelItem = new TreeItem(model);
@@ -82,64 +77,6 @@ public class MainScreenController {
         root.setValue(lineSelected);
         root.setExpanded(true);
         modelSelector.setRoot(root);
-
-    }
-
-    String getDatabaseJSONString(String endUrl) {
-        String json = "";
-        String baseURL = "http://localhost:8080/api/";
-        String fullURL = baseURL.concat(endUrl);
-        try {
-            URL url = new URL(fullURL);
-            HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
-            conexao.setRequestMethod("GET");
-
-            if (conexao.getResponseCode() != 200){
-                throw new RuntimeException("HTTP error code : " + conexao.getResponseCode());
-            }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
-            String output;
-
-            while ((output = br.readLine()) != null){
-                json += output;
-            }
-            conexao.disconnect();
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return json;
-
-
-    }
-
-    String getDatabaseJSONString(String endUrl, String filter) {
-        String json = "";
-        String baseURL = "http://localhost:8080/api";
-        String fullURL = String.format("%s/%s/%s", baseURL, endUrl, filter.replaceAll(" ", "%20"));
-        try {
-            URL url = new URL(fullURL);
-            HttpURLConnection conexao = (HttpURLConnection) url.openConnection();
-            conexao.setRequestMethod("GET");
-
-            if (conexao.getResponseCode() != 200){
-                throw new RuntimeException("HTTP error code : " + conexao.getResponseCode());
-            }
-
-            BufferedReader br = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
-            String output;
-
-            while ((output = br.readLine()) != null){
-                json += output;
-            }
-            conexao.disconnect();
-
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        return json;
-
 
     }
 

@@ -1,8 +1,12 @@
 package model;
 
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-public class LineEntity implements EntityInterface {
+import java.util.List;
+
+public class LineEntity extends AbstractEntity {
 
     private String name;
     public LineEntity() {}
@@ -17,6 +21,18 @@ public class LineEntity implements EntityInterface {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static String getEndUrl() {return "linhas";}
+
+    public static List<LineEntity> getDatabaseList() {
+        Gson gson = new Gson();
+        return gson.fromJson(getDatabaseJSON(getEndUrl()), new TypeToken<List<LineEntity>>(){}.getType());
+    }
+
+    public static List<LineEntity> getDatabaseList(String filter) {
+        Gson gson = new Gson();
+        return gson.fromJson(getDatabaseJSON(getEndUrl(), filter), new TypeToken<List<LineEntity>>(){}.getType());
     }
 
     @Override
