@@ -41,7 +41,6 @@ public class MainScreenController {
         accordion.setExpandedPane(titledPaneLines);
         titledPaneModels.setDisable(true);
 
-
         List<LineEntity> lineList = LineEntity.getDatabaseList();
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
