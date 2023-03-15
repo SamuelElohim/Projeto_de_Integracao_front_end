@@ -21,7 +21,7 @@ import model.*;
 public class MainScreenController {
 
     @FXML
-    private ComboBox<AbstractEntity> lineSelector;
+    private ComboBox<LineEntity> lineSelector;
 
     @FXML
     private TreeView modelSelector;
@@ -42,6 +42,7 @@ public class MainScreenController {
         titledPaneModels.setDisable(true);
 
         List<LineEntity> lineList = LineEntity.getDatabaseList();
+        lineList.forEach(a -> System.out.println(a.getId()));
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));

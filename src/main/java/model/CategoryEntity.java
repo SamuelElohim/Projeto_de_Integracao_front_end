@@ -7,14 +7,24 @@ import java.util.List;
 
 public class CategoryEntity extends AbstractEntity {
 
+    private int id;
     private String name;
     private LineEntity line;
 
 
     public CategoryEntity() {}
-    public CategoryEntity(LineEntity line, String name){
+    public CategoryEntity(LineEntity line, String name, int id){
+        this.id = id;
         this.line = line;
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

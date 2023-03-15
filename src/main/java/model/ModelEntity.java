@@ -6,15 +6,25 @@ import com.google.gson.reflect.TypeToken;
 import java.util.List;
 
 public class ModelEntity extends AbstractEntity {
-    private String name;
 
+    private int id;
+    private String name;
     private CategoryEntity category;
 
     public ModelEntity() {}
 
-    public ModelEntity(CategoryEntity category, String name) {
+    public ModelEntity(CategoryEntity category, String name, int id) {
+        this.id = id;
         this.category = category;
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
