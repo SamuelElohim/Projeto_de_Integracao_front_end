@@ -17,18 +17,18 @@
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="29.0" vgrow="NEVER" />
-    <RowConstraints maxHeight="372.0" minHeight="10.0" prefHeight="371.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="29.0" vgrow="NEVER" />
+    <RowConstraints fillHeight="false" minHeight="-Infinity" prefHeight="371.0" valignment="BOTTOM" vgrow="ALWAYS" />
   </rowConstraints>
    <children>
-      <Accordion fx:id="accordion" prefHeight="299.0" prefWidth="600.0" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+      <Accordion fx:id="accordion" prefWidth="600.0" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="SOMETIMES">
         <panes>
-            <TitledPane fx:id="titledPaneLines" animated="false" text="Linhas">
+            <TitledPane fx:id="titledPaneLines" animated="false" contentDisplay="TOP" maxHeight="253.0" prefHeight="100.0" prefWidth="600.0" text="Linhas">
                <content>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                  <AnchorPane maxHeight="100.0" snapToPixel="false">
                      <children>
-                        <ComboBox fx:id="lineSelector" layoutX="179.0" layoutY="48.0" prefWidth="150.0" />
-                        <Text layoutX="24.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione a linha">
+                        <ComboBox fx:id="lineSelector" layoutX="179.0" layoutY="21.0" prefWidth="150.0" />
+                        <Text layoutX="23.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione a linha">
                            <font>
                               <Font name="Lucida Console" size="13.0" />
                            </font></Text>
@@ -36,9 +36,9 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-            <TitledPane fx:id="titledPaneModels" animated="false" expanded="false" text="Modelos">
+            <TitledPane fx:id="titledPaneModels" animated="false" expanded="false" prefWidth="600.0" text="Modelos">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <AnchorPane prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Text layoutX="21.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o Modelo">
                            <font>
