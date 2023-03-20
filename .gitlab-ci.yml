@@ -1,4 +1,12 @@
 build:
-  stage: build
   script:
     - mvn package
+  artifacts:
+    name: "Executavel-Projeto-de-Integracao"
+    paths:
+      - target\jfx\native\*.exe
+
+
+
+
+
