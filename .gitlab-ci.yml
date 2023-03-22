@@ -1,4 +1,12 @@
-image: rvancea/maven-chrome-jdk8:latest
+stages: 
+  - test
+  - build
+  - deploy
+
+test: 
+  stage: test
+  script:
+     - mvn test
 
 build:
   stage: build
@@ -14,4 +22,4 @@ deploy:
   dependencies: 
     - build
   script:
-    - copy target\jfx\native\*.exe "\\SAMUEL-CONRADO\Deploy\Develop\Projeto_de_Integracao-1.0.exe" 
+    - copy target\jfx\native\*.exe "\\SAMUEL-CONRADO\Deploy\Prod\" 
