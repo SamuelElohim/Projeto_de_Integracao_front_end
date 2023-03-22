@@ -14,4 +14,4 @@ deploy:
   dependencies: 
     - build
   script:
-    - copy target\jfx\native\*.exe "\\SAMUEL-CONRADO\Deploy\Prod\Projeto_de_Integracao-1.0.exe" 
+    - copy target\jfx\native\*.exe "\\SAMUEL-CONRADO\Deploy\Develop\Projeto_de_Integracao-1.0.exe" 
