@@ -44,8 +44,6 @@ public class ModelDto implements DtoObjectInterface {
         this.category = category;
     }
 
-    public static String getEndUrl() {return "modelos";}
-
     @Override
     public String toString() {
         return name;

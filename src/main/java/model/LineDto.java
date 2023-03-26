@@ -36,18 +36,6 @@ public class LineDto implements DtoObjectInterface {
         this.name = name;
     }
 
-    public static String getEndUrl() {return "linhas";}
-
-    public static List<LineDto> getDatabaseList() {
-        Gson gson = new Gson();
-        return gson.fromJson(getDatabaseJSON(getEndUrl()), new TypeToken<List<LineDto>>(){}.getType());
-    }
-
-    public static List<LineDto> getDatabaseList(String filter) {
-        Gson gson = new Gson();
-        return gson.fromJson(getDatabaseJSON(getEndUrl(), filter), new TypeToken<List<LineDto>>(){}.getType());
-    }
-
     @Override
     public String toString() {
         return name;

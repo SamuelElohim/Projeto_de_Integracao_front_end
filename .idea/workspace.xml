@@ -10,18 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/DtoObjectInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/JsonDtoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/CategoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/CategoryEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/EntityInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/LineEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/LineEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/ModelEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/ModelEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/LineEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/LineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

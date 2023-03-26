@@ -43,8 +43,6 @@ public class CategoryDto implements DtoObjectInterface {
         this.line = line;
     }
 
-    public static String getEndUrl() {return "categorias";}
-
     @Override
     public String toString() {
         return name;
