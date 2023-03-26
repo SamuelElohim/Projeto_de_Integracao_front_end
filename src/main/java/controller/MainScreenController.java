@@ -1,27 +1,18 @@
 package controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.ProtocolException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 
 import model.*;
 
+import static service.JsonDtoMapper.getDatabaseList;
+
 public class MainScreenController {
 
     @FXML
-    private ComboBox<LineEntity> lineSelector;
+    private ComboBox<LineDto> lineSelector;
 
     @FXML
     private TreeView modelSelector;
@@ -36,13 +27,13 @@ public class MainScreenController {
     private TitledPane titledPaneModels;
 
     @FXML
-    void initialize() throws IOException {
+    void initialize(){
 
         accordion.setExpandedPane(titledPaneLines);
         titledPaneModels.setDisable(true);
 
-        List<LineEntity> lineList = LineEntity.getDatabaseList();
-        lineList.forEach(a -> System.out.println(a.getId()));
+        List<LineDto> lineList = getDatabaseList(LineDto[].class, "linhas");
+        lineList.forEach(a -> a.getClass());
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
@@ -60,13 +51,13 @@ public class MainScreenController {
         String lineSelected = lineSelector.getValue().toString();
         TreeItem root = new TreeItem(lineSelected);
 
-        List<CategoryEntity> categoryList = CategoryEntity.getDatabaseList(lineSelected);
+        List<CategoryDto> categoryList = getDatabaseList(CategoryDto[].class, "categorias", lineSelected);
 
         categoryList.forEach(categoryListItem -> {
             TreeItem categoryItem = new TreeItem<>(categoryListItem);
             root.getChildren().add(categoryItem);
 
-            List<ModelEntity> modelList = ModelEntity.getDatabaseList(categoryListItem.toString());
+            List<ModelDto> modelList = getDatabaseList(ModelDto[].class, "modelos", categoryListItem.toString());
 
             modelList.forEach(model -> {
                 TreeItem modelItem = new TreeItem(model);
