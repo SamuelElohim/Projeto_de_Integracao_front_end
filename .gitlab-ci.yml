@@ -1,0 +1,25 @@
+stages: 
+  - test
+  - build
+  - deploy
+
+test: 
+  stage: test
+  script:
+     - mvn test
+
+build:
+  stage: build
+  script:
+    - mvn package
+  artifacts:
+    name: "Executavel-Projeto-de-Integracao"
+    paths:
+      - target\jfx\native\*.exe
+
+deploy:
+  stage: deploy
+  dependencies: 
+    - build
+  script:
+    - copy target\jfx\native\*.exe "\\SAMUEL-CONRADO\Deploy\Prod\" 
