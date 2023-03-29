@@ -33,7 +33,6 @@ public class MainScreenController {
         titledPaneModels.setDisable(true);
 
         List<LineDto> lineList = getDatabaseList(LineDto[].class, "linhas");
-        lineList.forEach(a -> a.getClass());
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
