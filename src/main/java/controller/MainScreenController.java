@@ -34,6 +34,7 @@ public class MainScreenController {
 
         List<LineDto> lineList = getDatabaseList(LineDto[].class, "linhas");
 
+
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
 

@@ -10,9 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/DtoObjectInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AbstractDtoObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/LineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/JsonDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/JsonDtoMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,7 @@
         <option value="com.haulmont.jpb.JpaRepository" />
         <option value="com.haulmont.jpb.NewInterface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -63,19 +69,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Samuel Conrado/Documents/Projeto-de-integracao/Projeto_de_Integracao_front_end&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.27931035&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "full.screen.before.presentation.mode": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/Samuel Conrado/Documents/Projeto-de-integracao/Projeto_de_Integracao_front_end",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.27931035",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\resources" />
@@ -84,11 +92,17 @@
       <recent name="C:\Users\Samuel Conrado\Desktop\Projeto_de_Integracao_2\Projeto-de-Integracao-Eletra-2-Front-end\src\main\Java" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_back_end" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_back_end\src\main\resources" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\deploy\package\windows" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\deploy\package\windows\images" />
-      <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\resources\view" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="service" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.com.eletra.resources" />
@@ -144,9 +158,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Projeto_de_Integracao_front_end-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Projeto_de_Integracao_front_end-1.0-SNAPSHOT.jar" />
-      <method v="2" />
+    <configuration name="HttpRestClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Projeto_de_Integracao_front_end" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.HttpRestClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Projeto-de-Integracao-Eletra-2-Front-end" />
@@ -165,9 +190,9 @@
       <list>
         <item itemvalue="Application.MainClass (1)" />
         <item itemvalue="Application.br.com.eletra.ApiRestApplication" />
+        <item itemvalue="JUnit.HttpRestClientTest" />
         <item itemvalue="Application.TestClass" />
         <item itemvalue="Application.ApiRestApplication" />
-        <item itemvalue="JAR Application.Projeto_de_Integracao_front_end-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
   </component>
@@ -212,5 +237,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MainClass_java$HttpRestClientTest.ic" NAME="HttpRestClientTest Coverage Results" MODIFIED="1680116533123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>service.*</FILTER>
+    </SUITE>
   </component>
 </project>
