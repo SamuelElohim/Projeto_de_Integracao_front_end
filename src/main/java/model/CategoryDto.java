@@ -1,38 +1,12 @@
 package model;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.util.List;
-
-public class CategoryDto implements DtoObjectInterface {
-
-    private int id;
-    private String name;
+public class CategoryDto extends AbstractDtoObject {
     private LineDto line;
-
 
     public CategoryDto() {}
     public CategoryDto(LineDto line, String name, int id){
-        this.id = id;
+        super(name, id);
         this.line = line;
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public LineDto getLine() {
@@ -41,10 +15,5 @@ public class CategoryDto implements DtoObjectInterface {
 
     public void setLine(LineDto line) {
         this.line = line;
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 }
