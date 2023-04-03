@@ -1,6 +1,10 @@
 package controller;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
@@ -9,45 +13,47 @@ import model.*;
 
 import static service.JsonDtoMapper.getDatabaseList;
 
-public class MainScreenController {
+public class MainScreenController implements Initializable {
 
     @FXML
-    private ComboBox<LineDto> lineSelector;
+    protected ComboBox<LineDto> lineSelector;
 
     @FXML
-    private TreeView modelSelector;
+    protected TreeView modelSelector;
 
     @FXML
-    private Accordion accordion;
+    protected Accordion accordion;
 
     @FXML
-    private TitledPane titledPaneLines;
+    protected TitledPane titledPaneLines;
 
     @FXML
-    private TitledPane titledPaneModels;
+    protected TitledPane titledPaneModels;
 
-    @FXML
-    void initialize(){
+    @Override
+    public void initialize(URL location, ResourceBundle resources){
 
         accordion.setExpandedPane(titledPaneLines);
         titledPaneModels.setDisable(true);
 
-        List<LineDto> lineList = getDatabaseList(LineDto[].class, "linhas");
+        fillLineSelectorComboBox();
+    }
 
+    public void fillLineSelectorComboBox() {
+        List<LineDto> lineList = getDatabaseList(LineDto[].class, "linhas");
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
-
     }
 
-    void openTreeView() {
+    public void openTreeView() {
         titledPaneModels.setDisable(false);
         titledPaneModels.setExpanded(true);
 
         fillTreeView();
     }
 
-    void fillTreeView() {
+    public void fillTreeView() {
         String lineSelected = lineSelector.getValue().toString();
         TreeItem root = new TreeItem(lineSelected);
 
@@ -70,5 +76,4 @@ public class MainScreenController {
         modelSelector.setRoot(root);
 
     }
-
 }

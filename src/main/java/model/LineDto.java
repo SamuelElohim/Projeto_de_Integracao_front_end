@@ -7,7 +7,7 @@ public class LineDto extends AbstractDtoObject {
 
     public LineDto() {}
 
-    public LineDto(String name, int id) {
-        super(name, id);
+    public LineDto(int id, String name) {
+        super(id, name);
     }
 }

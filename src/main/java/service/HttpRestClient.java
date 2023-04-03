@@ -47,5 +47,4 @@ public abstract class HttpRestClient {
         return getHTTPRequest(fullURL);
     }
 
-
 }

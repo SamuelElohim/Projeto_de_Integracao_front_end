@@ -6,7 +6,7 @@ public class ModelDto extends AbstractDtoObject {
     public ModelDto() {}
 
     public ModelDto(CategoryDto category, String name, int id) {
-        super(name, id);
+        super(id, name);
         this.category = category;
     }
 

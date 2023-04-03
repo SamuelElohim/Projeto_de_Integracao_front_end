@@ -5,7 +5,7 @@ public abstract class AbstractDtoObject {
     private String name;
     public AbstractDtoObject() {}
 
-    public AbstractDtoObject(String name, int id) {
+    public AbstractDtoObject(int id, String name) {
         this.id = id;
         this.name = name;
     }

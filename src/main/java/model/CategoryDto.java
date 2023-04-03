@@ -5,7 +5,7 @@ public class CategoryDto extends AbstractDtoObject {
 
     public CategoryDto() {}
     public CategoryDto(LineDto line, String name, int id){
-        super(name, id);
+        super(id, name);
         this.line = line;
     }
 
