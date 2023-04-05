@@ -1,8 +1,10 @@
 package model;
 
+import java.util.Objects;
+
 public abstract class AbstractDtoObject {
-    private int id;
-    private String name;
+    protected int id;
+    protected String name;
     public AbstractDtoObject() {}
 
     public AbstractDtoObject(int id, String name) {
@@ -27,7 +29,24 @@ public abstract class AbstractDtoObject {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (!(obj instanceof AbstractDtoObject)) {
+            return false;
+        }
+
+        AbstractDtoObject otherObject = (AbstractDtoObject) obj;
+
+        return Objects.equals(name, otherObject.name)
+                && Objects.equals(id, otherObject.id);
+    }
+
+    @Override
     public String toString() {
         return name;
     }
+
 }

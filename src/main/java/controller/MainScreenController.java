@@ -57,6 +57,18 @@ public class MainScreenController implements Initializable {
         String lineSelected = lineSelector.getValue().toString();
         TreeItem root = new TreeItem(lineSelected);
 
+        fillTreeItem(root);
+
+        root.setValue(lineSelected);
+        root.setExpanded(true);
+        modelSelector.setRoot(root);
+
+    }
+
+    public void fillTreeItem(TreeItem root) {
+
+        String lineSelected = root.getValue().toString();
+
         List<CategoryDto> categoryList = getDatabaseList(CategoryDto[].class, "categorias", lineSelected);
 
         categoryList.forEach(categoryListItem -> {
@@ -70,10 +82,5 @@ public class MainScreenController implements Initializable {
                 categoryItem.getChildren().add(modelItem);
             });
         });
-
-        root.setValue(lineSelected);
-        root.setExpanded(true);
-        modelSelector.setRoot(root);
-
     }
 }

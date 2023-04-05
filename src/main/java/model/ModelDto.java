@@ -5,7 +5,7 @@ public class ModelDto extends AbstractDtoObject {
 
     public ModelDto() {}
 
-    public ModelDto(CategoryDto category, String name, int id) {
+    public ModelDto(int id, String name, CategoryDto category) {
         super(id, name);
         this.category = category;
     }
@@ -16,5 +16,11 @@ public class ModelDto extends AbstractDtoObject {
 
     public void setCategory(CategoryDto category) {
         this.category = category;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        ModelDto otherModel = (ModelDto) obj;
+        return super.equals(obj) && category.equals(otherModel.category);
     }
 }

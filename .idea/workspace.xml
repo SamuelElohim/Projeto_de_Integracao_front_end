@@ -11,15 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto-de-Integracao-Eletra-4-Front-end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto-de-Integracao-Eletra-5-Front-end.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/AbstractDtoObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AbstractDtoObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/LineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainScreenControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainScreenControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +129,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainScreenControllerTest">
+  <component name="RunManager" selected="JUnit.JsonDtoMapperTest">
     <configuration name="ApiRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.eletra.ApiRestApplication" />
       <module name="Projeto_de_integracao_back_end" />
@@ -166,7 +165,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonDtoMapperTest.testGetDatabaseList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonDtoMapperTest.testGetDatabaseList01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
@@ -176,23 +175,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="service" />
       <option name="MAIN_CLASS_NAME" value="service.JsonDtoMapperTest" />
-      <option name="METHOD_NAME" value="testGetDatabaseList" />
+      <option name="METHOD_NAME" value="testGetDatabaseList01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainScreenControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonDtoMapperTest.testGetDatabaseList02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.JsonDtoMapperTest" />
+      <option name="METHOD_NAME" value="testGetDatabaseList02" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,10 +212,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainScreenControllerTest" />
-        <item itemvalue="Application.ApiRestApplication" />
         <item itemvalue="JUnit.JsonDtoMapperTest" />
-        <item itemvalue="JUnit.JsonDtoMapperTest.testGetDatabaseList" />
+        <item itemvalue="Application.ApiRestApplication" />
+        <item itemvalue="JUnit.JsonDtoMapperTest.testGetDatabaseList02" />
+        <item itemvalue="JUnit.JsonDtoMapperTest.testGetDatabaseList01" />
         <item itemvalue="Application.MainClass" />
       </list>
     </recent_temporary>
@@ -267,6 +267,9 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MainClass_java$JsonDtoMapperTest.ic" NAME="JsonDtoMapperTest Coverage Results" MODIFIED="1680657040661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>service.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/MainClass_java$JsonDtoMapperTest_testGetDatabaseList.ic" NAME="JsonDtoMapperTest.testGetDatabaseList Coverage Results" MODIFIED="1680544416119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>service.*</FILTER>
     </SUITE>
