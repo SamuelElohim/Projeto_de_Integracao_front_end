@@ -11,9 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainScreenControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainScreenControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/LineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,26 +67,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Samuel Conrado/Documents/Projeto-de-integracao/Projeto_de_Integracao_front_end&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.27931035&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "full.screen.before.presentation.mode": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/Samuel Conrado/Documents/Projeto-de-integracao/Projeto_de_Integracao_front_end/src/test/java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.27931035",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\test\java" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\resources" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\deploy\package\windows" />
       <recent name="C:\Users\Samuel Conrado\Documents\Projeto-de-integracao\Projeto_de_Integracao_front_end\src\main\resources\view" />
@@ -104,6 +105,7 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="model" />
       <recent name="controller" />
       <recent name="service" />
     </key>
@@ -124,82 +126,69 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MainScreenControllerTest">
-    <configuration name="MainScreenControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Projeto_de_Integracao_front_end" />
+  <component name="RunManager" selected="JUnit.java in Projeto_de_Integracao_front_end">
+    <configuration name="ApiRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.eletra.ApiRestApplication" />
+      <module name="Projeto_de_integracao_back_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="br.com.eletra.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Projeto_de_Integracao_front_end" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.CategoryDtoTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainScreenControllerTest.fillLineSelectorComboBoxTest02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LineDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
-      <option name="METHOD_NAME" value="fillLineSelectorComboBoxTest02" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.LineDtoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainScreenControllerTest.fillTreeItemTest01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModelDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
-      <option name="METHOD_NAME" value="fillTreeItemTest01" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ModelDtoTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainScreenControllerTest.fillTreeViewTest01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="java in Projeto_de_Integracao_front_end" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
-      <option name="METHOD_NAME" value="fillTreeViewTest01" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MainScreenControllerTest.fillTreeViewTest02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Projeto_de_Integracao_front_end" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
-      <option name="METHOD_NAME" value="fillTreeViewTest02" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MainScreenControllerTest" />
-        <item itemvalue="JUnit.MainScreenControllerTest.fillLineSelectorComboBoxTest02" />
-        <item itemvalue="JUnit.MainScreenControllerTest.fillTreeItemTest01" />
-        <item itemvalue="JUnit.MainScreenControllerTest.fillTreeViewTest02" />
-        <item itemvalue="JUnit.MainScreenControllerTest.fillTreeViewTest01" />
+        <item itemvalue="JUnit.java in Projeto_de_Integracao_front_end" />
+        <item itemvalue="JUnit.ModelDtoTest" />
+        <item itemvalue="JUnit.CategoryDtoTest" />
+        <item itemvalue="Application.ApiRestApplication" />
+        <item itemvalue="JUnit.LineDtoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -280,6 +269,7 @@
     <SUITE FILE_PATH="coverage/MainScreenControllerTest_java$MainScreenControllerTest.ic" NAME="MainScreenControllerTest Coverage Results" MODIFIED="1681155078906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controller.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/MainScreenControllerTest_java$java_in_Projeto_de_Integracao_front_end.ic" NAME="java in Projeto_de_Integracao_front_end Coverage Results" MODIFIED="1681159176412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/MainClass_java$JsonDtoMapperTest_testGetDatabaseList.ic" NAME="JsonDtoMapperTest.testGetDatabaseList Coverage Results" MODIFIED="1680544416119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>service.*</FILTER>
     </SUITE>

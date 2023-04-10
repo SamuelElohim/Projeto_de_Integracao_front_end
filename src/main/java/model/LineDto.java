@@ -19,3 +19,4 @@ public class LineDto extends AbstractDtoObject {
         return super.equals(obj);
     }
 }
+
