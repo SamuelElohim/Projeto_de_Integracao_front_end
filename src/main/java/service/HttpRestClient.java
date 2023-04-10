@@ -7,6 +7,8 @@ import java.net.URL;
 
 public abstract class HttpRestClient {
 
+    private static final String BASEURL = "http://localhost:8080/api/";
+
     static String getHTTPRequest(String requestURL) {
         String json = "";
         try {
@@ -33,16 +35,14 @@ public abstract class HttpRestClient {
     }
 
     public static String getDatabaseJSON(String endUrl) {
-        String baseURL = "http://localhost:8080/api/";
-        String fullURL = baseURL.concat(endUrl);
+        String fullURL = BASEURL.concat(endUrl);
 
         return getHTTPRequest(fullURL);
 
     }
 
     public static String getDatabaseJSON(String endUrl, String filter) {
-        String baseURL = "http://localhost:8080/api";
-        String fullURL = String.format("%s/%s/%s", baseURL, endUrl, filter.replaceAll(" ", "%20"));
+        String fullURL = String.format("%s/%s/%s", BASEURL, endUrl, filter.replaceAll(" ", "%20"));
 
         return getHTTPRequest(fullURL);
     }

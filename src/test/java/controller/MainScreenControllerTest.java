@@ -6,6 +6,7 @@ import model.LineDto;
 import model.ModelDto;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
+import org.junit.runners.MethodSorters;
 import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 import org.testfx.framework.junit.ApplicationTest;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import static service.JsonDtoMapper.getDatabaseList;
@@ -24,9 +26,7 @@ public class MainScreenControllerTest extends ApplicationTest {
     @Rule
     public ErrorCollector error = new ErrorCollector();
 
-    MainScreenController mc;
-    protected static List<TreeItem<LineDto>> expectedCategoryTreeItems = new ArrayList<>();
-    protected static List<TreeItem<LineDto>> actualCategoryTreeItems = new ArrayList<>();
+    protected MainScreenController mc;
 
     @Before
     public void setUp() {
@@ -66,35 +66,58 @@ public class MainScreenControllerTest extends ApplicationTest {
     }
 
     @Test
+    public void initializeTest03() {
+        doNothing().when(mc).fillLineSelectorComboBox();
+        mc.titledPaneModels.setDisable(false);
+
+        mc.initialize(null, null);
+
+        verify(mc, times(1)).fillLineSelectorComboBox();
+    }
+
+    @Test
     public void fillLineSelectorComboBoxTest01() {
 
-        try(MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class)) {
+        MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class);
 
-            LineDto[] dtos = new LineDto[]{new LineDto(1, "Ares"), new LineDto(2, "Cronos")};
-            List<LineDto> dtoslist = Arrays.asList(dtos);
+        LineDto ares = new LineDto(1, "Ares");
+        LineDto cronos = new LineDto(2, "Cronos");
 
-            mockConnection.when(() -> JsonDtoMapper.getDatabaseList(LineDto[].class, "linhas")).thenReturn(dtoslist);
-            mc.lineSelector.getItems().clear();
-            mc.fillLineSelectorComboBox();
-            assertFalse("Check comboBox is empty when request LineDto list", mc.lineSelector.getItems().isEmpty());
-        }
+        LineDto[] dtos = new LineDto[]{ares, cronos};
+        List<LineDto> expected = Arrays.asList(dtos);
+
+        mockConnection.when(() -> JsonDtoMapper.getDatabaseList(LineDto[].class, "linhas")).thenReturn(expected);
+        mc.lineSelector.getItems().clear();
+        mc.fillLineSelectorComboBox();
+        List<LineDto> actual = mc.lineSelector.getItems();
+
+        error.checkThat("Check if lineSelector is being filled when LineDto List is called",
+                mc.lineSelector.getItems().isEmpty(), is(false));
+        assertArrayEquals(expected.toArray(), actual.toArray());
+
+        mockConnection.close();
     }
 
     @Test
     public void fillLineSelectorComboBoxTest02() {
+        MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class);
 
-        try(MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class)) {
+        LineDto ares = new LineDto(1, "Ares");
+        LineDto cronos = new LineDto(2, "Cronos");
 
-            LineDto[] dtos = new LineDto[]{new LineDto(1, "Ares"), new LineDto(2, "Cronos")};
-            List<LineDto> expected = Arrays.asList(dtos);
+        LineDto[] dtos = new LineDto[]{ares, cronos};
+        List<LineDto> expected = Arrays.asList(dtos);
 
-            mockConnection.when(() -> JsonDtoMapper.getDatabaseList(LineDto[].class, "linhas")).thenReturn(expected);
-            mc.lineSelector.getItems().clear();
-            mc.fillLineSelectorComboBox();
-            List<LineDto> actual = mc.lineSelector.getItems();
-            assertArrayEquals(expected.toArray(), actual.toArray());
+        mockConnection.when(() -> JsonDtoMapper.getDatabaseList(LineDto[].class, "linhas")).thenReturn(expected);
+        mc.lineSelector.getItems().clear();
+        mc.fillLineSelectorComboBox();
+        List<LineDto> actual = mc.lineSelector.getItems();
 
-        }
+        mc.lineSelector.setValue(ares);
+
+        verify(mc, times(1)).openTreeView();
+
+        mockConnection.close();
     }
 
     @Test
@@ -103,8 +126,8 @@ public class MainScreenControllerTest extends ApplicationTest {
 
         mc.titledPaneModels.setDisable(true);
         mc.openTreeView();
-        assertFalse(mc.titledPaneModels.isDisabled());
-
+        error.checkThat(mc.titledPaneModels.isDisabled(), is(false));
+        error.checkThat(mc.titledPaneModels.isExpanded(), is(true));
     }
 
     @Test
@@ -113,7 +136,7 @@ public class MainScreenControllerTest extends ApplicationTest {
 
         mc.titledPaneModels.setExpanded(false);
         mc.openTreeView();
-        assertTrue(mc.titledPaneModels.isExpanded());
+        verify(mc, times(1)).fillTreeView();
 
     }
 
@@ -125,9 +148,11 @@ public class MainScreenControllerTest extends ApplicationTest {
         ArgumentCaptor<TreeItem> captor = ArgumentCaptor.forClass(TreeItem.class);
 
         mc.fillTreeView();
+
         verify(mc).fillTreeItem(captor.capture());
 
-        assertTrue(captor.getValue().isExpanded());
+        error.checkThat(captor.getValue().isExpanded(), is(true));
+        assertEquals(mc.modelSelector.getRoot(), captor.getValue());
     }
 
     @Test
@@ -139,65 +164,57 @@ public class MainScreenControllerTest extends ApplicationTest {
 
         mc.fillTreeView();
 
-        verify(mc).fillTreeItem(captor.capture());
-        assertEquals(mc.modelSelector.getRoot(), captor.getValue());
+        verify(mc, times(1)).fillTreeView();
+
     }
 
     @Test
     public void fillTreeItemTest01() {
-        try(MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class)) {
+        MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class);
 
-            LineDto cronos = new LineDto(2, "Cronos");
+        LineDto cronos = new LineDto(2, "Cronos");
 
-            CategoryDto cronosOld = new CategoryDto(1, "Cronos Old", cronos);
-            CategoryDto cronosL = new CategoryDto(1, "Cronos L", cronos);
+        CategoryDto cronosOld = new CategoryDto(1, "Cronos Old", cronos);
+        CategoryDto cronosL = new CategoryDto(1, "Cronos L", cronos);
 
-            ModelDto cronos6001A = new ModelDto(1, "Cronos 6001-A", cronosOld);
-            ModelDto cronos6003 = new ModelDto(2, "Cronos 6003", cronosOld);
-            ModelDto cronos6021 = new ModelDto(4, "Cronos 6021", cronosL);
-            ModelDto cronos7023L = new ModelDto(5, "Cronos 7023L", cronosL);
+        ModelDto cronos6001A = new ModelDto(1, "Cronos 6001-A", cronosOld);
+        ModelDto cronos6003 = new ModelDto(2, "Cronos 6003", cronosOld);
+        ModelDto cronos6021 = new ModelDto(4, "Cronos 6021", cronosL);
+        ModelDto cronos7023L = new ModelDto(5, "Cronos 7023L", cronosL);
 
-            List<CategoryDto> categoryDtosList = new ArrayList<>();
-            categoryDtosList.add(cronosOld);
-            categoryDtosList.add(cronosL);
+        List<CategoryDto> categoryDtosList = new ArrayList<>();
+        categoryDtosList.add(cronosOld);
+        categoryDtosList.add(cronosL);
 
-            List<ModelDto> cronosOldDtoModelsList = new ArrayList<>();
-            cronosOldDtoModelsList.add(cronos6001A);
-            cronosOldDtoModelsList.add(cronos6003);
+        List<ModelDto> cronosOldDtoModelsList = new ArrayList<>();
+        cronosOldDtoModelsList.add(cronos6001A);
+        cronosOldDtoModelsList.add(cronos6003);
 
-            List<ModelDto> cronosLDtoModelsList = new ArrayList<>();
-            cronosLDtoModelsList.add(cronos6021);
-            cronosLDtoModelsList.add(cronos7023L);
+        List<ModelDto> cronosLDtoModelsList = new ArrayList<>();
+        cronosLDtoModelsList.add(cronos6021);
+        cronosLDtoModelsList.add(cronos7023L);
 
-            mockConnection.when(() -> getDatabaseList(CategoryDto[].class, "categorias", "Cronos"))
-                    .thenReturn(categoryDtosList);
-            mockConnection.when(() -> getDatabaseList(ModelDto[].class, "modelos", "Cronos Old"))
-                    .thenReturn(cronosOldDtoModelsList);
-            mockConnection.when(() -> getDatabaseList(ModelDto[].class, "modelos", "Cronos L"))
-                    .thenReturn(cronosLDtoModelsList);
+        mockConnection.when(() -> getDatabaseList(CategoryDto[].class, "categorias", "Cronos"))
+                .thenReturn(categoryDtosList);
+        mockConnection.when(() -> getDatabaseList(ModelDto[].class, "modelos", "Cronos Old"))
+                .thenReturn(cronosOldDtoModelsList);
+        mockConnection.when(() -> getDatabaseList(ModelDto[].class, "modelos", "Cronos L"))
+                .thenReturn(cronosLDtoModelsList);
 
-            TreeItem<LineDto> root = new TreeItem<>(cronos);
-            mc.fillTreeItem(root);
+        TreeItem<LineDto> root = new TreeItem<>(cronos);
+        mc.fillTreeItem(root);
 
+        TreeItem cronosOldTreeItem = new TreeItem("Cronos Old");
+        TreeItem cronosLTreeItem = new TreeItem("Cronos L");
+        cronosOldDtoModelsList.forEach(e -> cronosOldTreeItem.getChildren().add(new TreeItem<>(e)));
+        cronosLDtoModelsList.forEach(e -> cronosLTreeItem.getChildren().add(new TreeItem<>(e)));
 
-            TreeItem cronosOldTreeItem = new TreeItem("Cronos Old");
-            TreeItem cronosLTreeItem = new TreeItem("Cronos L");
-            cronosOldDtoModelsList.forEach(e -> cronosOldTreeItem.getChildren().add(new TreeItem<>(e)));
-            cronosLDtoModelsList.forEach(e -> cronosLTreeItem.getChildren().add(new TreeItem<>(e)));
+        List<TreeItem<LineDto>> expectedCategoryTreeItems = new ArrayList<>();
+        expectedCategoryTreeItems.add(cronosOldTreeItem);
+        expectedCategoryTreeItems.add(cronosLTreeItem);
 
-            expectedCategoryTreeItems = new ArrayList<>();
-            expectedCategoryTreeItems.add(cronosOldTreeItem);
-            expectedCategoryTreeItems.add(cronosLTreeItem);
+        List<TreeItem<LineDto>> actualCategoryTreeItems = new ArrayList<>(root.getChildren());
 
-            actualCategoryTreeItems = new ArrayList<>(root.getChildren());
-
-            assertEquals(expectedCategoryTreeItems.toString(), actualCategoryTreeItems.toString());
-
-        }
-    }
-
-    @Test
-    public void fillTreeItemTest02() {
         StringBuilder expectedModelTreeItems = new StringBuilder();
         StringBuilder actualModelTreeItems = new StringBuilder();
 
@@ -213,8 +230,16 @@ public class MainScreenControllerTest extends ApplicationTest {
                     .forEach(modelTreeItem -> actualModelTreeItems.append(modelTreeItem.toString()));
         });
 
-        assertEquals(expectedModelTreeItems.toString(), actualModelTreeItems.toString());
+        assertEquals(
+                "Check if category items are set correctly",
+                expectedCategoryTreeItems.toString(), actualCategoryTreeItems.toString());
+
+        assertEquals("Check if model items are set correctly",
+                expectedModelTreeItems.toString(), actualModelTreeItems.toString());
+
+        mockConnection.close();
     }
+
 
 
 }
