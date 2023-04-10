@@ -10,15 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/AbstractDtoObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/AbstractDtoObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/LineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/controller/MainScreenControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/MainScreenControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +123,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.JsonDtoMapperTest">
+  <component name="RunManager" selected="JUnit.MainScreenControllerTest">
     <configuration name="ApiRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.eletra.ApiRestApplication" />
       <module name="Projeto_de_integracao_back_end" />
@@ -150,48 +144,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonDtoMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainScreenControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.JsonDtoMapperTest" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonDtoMapperTest.testGetDatabaseList01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainScreenControllerTest.fillTreeItemTest01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.JsonDtoMapperTest" />
-      <option name="METHOD_NAME" value="testGetDatabaseList01" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
+      <option name="METHOD_NAME" value="fillTreeItemTest01" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JsonDtoMapperTest.testGetDatabaseList02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainScreenControllerTest.fillTreeItemTest02" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="service.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.JsonDtoMapperTest" />
-      <option name="METHOD_NAME" value="testGetDatabaseList02" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.MainScreenControllerTest" />
+      <option name="METHOD_NAME" value="fillTreeItemTest02" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -212,11 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JsonDtoMapperTest" />
-        <item itemvalue="Application.ApiRestApplication" />
-        <item itemvalue="JUnit.JsonDtoMapperTest.testGetDatabaseList02" />
-        <item itemvalue="JUnit.JsonDtoMapperTest.testGetDatabaseList01" />
+        <item itemvalue="JUnit.MainScreenControllerTest" />
+        <item itemvalue="JUnit.MainScreenControllerTest.fillTreeItemTest02" />
+        <item itemvalue="JUnit.MainScreenControllerTest.fillTreeItemTest01" />
         <item itemvalue="Application.MainClass" />
+        <item itemvalue="Application.ApiRestApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -272,6 +266,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/MainClass_java$JsonDtoMapperTest_testGetDatabaseList.ic" NAME="JsonDtoMapperTest.testGetDatabaseList Coverage Results" MODIFIED="1680544416119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/MainScreenControllerTest_java$MainScreenControllerTest_fillTreeItemTest01.ic" NAME="MainScreenControllerTest.fillTreeItemTest01 Coverage Results" MODIFIED="1681096538620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/MainClass_java$HttpRestClientTest.ic" NAME="HttpRestClientTest Coverage Results" MODIFIED="1680116533123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>service.*</FILTER>
