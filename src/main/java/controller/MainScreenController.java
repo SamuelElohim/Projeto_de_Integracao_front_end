@@ -1,18 +1,18 @@
 package controller;
 
 import java.util.List;
-import hibernate.util.HibernateSession;
 import javafx.scene.control.*;
-import model.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 
-import org.hibernate.Session;
+import model.*;
+
+import static service.JsonDtoMapper.getDatabaseList;
 
 public class MainScreenController {
 
     @FXML
-    private ComboBox<LineEntity> lineSelector;
+    private ComboBox<LineDto> lineSelector;
 
     @FXML
     private TreeView modelSelector;
@@ -26,15 +26,14 @@ public class MainScreenController {
     @FXML
     private TitledPane titledPaneModels;
 
-    public Session session = HibernateSession.getSessionInstance();
-
     @FXML
-    void initialize() {
+    void initialize(){
 
         accordion.setExpandedPane(titledPaneLines);
         titledPaneModels.setDisable(true);
 
-        List<LineEntity> lineList = getDatabaseList(LineEntity.class);
+        List<LineDto> lineList = getDatabaseList(LineDto[].class, "linhas");
+
 
         lineSelector.setItems(FXCollections.observableArrayList(lineList));
         lineSelector.valueProperty().addListener(((observable, oldValue, newValue) -> openTreeView()));
@@ -52,15 +51,13 @@ public class MainScreenController {
         String lineSelected = lineSelector.getValue().toString();
         TreeItem root = new TreeItem(lineSelected);
 
-        List<CategoryEntity> categoryList = getFilteredDatabaseList(
-                CategoryEntity.class, "line_id", lineSelected);
+        List<CategoryDto> categoryList = getDatabaseList(CategoryDto[].class, "categorias", lineSelected);
 
         categoryList.forEach(categoryListItem -> {
             TreeItem categoryItem = new TreeItem<>(categoryListItem);
             root.getChildren().add(categoryItem);
 
-            List<ModelEntity> modelList= getFilteredDatabaseList(
-                    ModelEntity.class, "category_id", categoryListItem);
+            List<ModelDto> modelList = getDatabaseList(ModelDto[].class, "modelos", categoryListItem.toString());
 
             modelList.forEach(model -> {
                 TreeItem modelItem = new TreeItem(model);
@@ -72,25 +69,6 @@ public class MainScreenController {
         root.setExpanded(true);
         modelSelector.setRoot(root);
 
-    }
-
-    <T extends EntityInterface> List<T> getDatabaseList(Class<T> entityClass) {
-        List<T> entityList = session.createQuery(
-                        String.format("FROM %s", entityClass.getSimpleName()))
-                .list();
-
-        return entityList;
-    }
-
-    <T extends EntityInterface> List<T> getFilteredDatabaseList(Class<T> entityClass, String columnName, Object filterObject) {
-        List<T> entityList = session.createQuery(
-                        String.format("FROM %s WHERE %s = '%s'",
-                                entityClass.getSimpleName(),
-                                columnName,
-                                filterObject.toString()))
-                .list();
-
-        return entityList;
     }
 
 }
