@@ -21,4 +21,12 @@ public class LineDtoTest {
         assertNotEquals(line1, line2);
     }
 
+    @Test
+    public void equalsTest04(){
+        LineDto line1 = new LineDto(1, "Ares");
+        CategoryDto category1 = new CategoryDto(1, "Cronos Old", new LineDto(1, "Cronos"));
+
+        assertNotEquals(line1, category1);
+    }
+
 }

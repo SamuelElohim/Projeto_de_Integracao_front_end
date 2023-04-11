@@ -15,6 +15,10 @@ public class LineDto extends AbstractDtoObject {
 
     @Override
     public boolean equals(Object obj) {
+        if (!(obj instanceof LineDto)) {
+            return false;
+        }
+
         LineDto otherLine = (LineDto) obj;
         return super.equals(obj);
     }

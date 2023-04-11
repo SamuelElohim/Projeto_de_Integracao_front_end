@@ -20,6 +20,10 @@ public class ModelDto extends AbstractDtoObject {
 
     @Override
     public boolean equals(Object obj) {
+        if (!(obj instanceof ModelDto)) {
+            return false;
+        }
+
         ModelDto otherModel = (ModelDto) obj;
         return super.equals(obj) && category.equals(otherModel.category);
     }

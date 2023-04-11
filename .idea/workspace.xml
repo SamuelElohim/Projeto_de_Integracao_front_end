@@ -10,10 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25a9b2eb-bc69-4449-9897-62f1fb229093" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/LineEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/LineEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/ModelEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/model/ModelEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/resources/CategoryEntityResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/resources/CategoryEntityResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/resources/ModelEntityResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projeto_de_Integracao_back_end/src/main/java/br/com/eletra/resources/ModelEntityResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/CategoryDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/LineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/LineDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/JsonDtoMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/ModelDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/HttpRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/CategoryDtoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CategoryDtoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/LineDtoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/LineDtoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ModelDtoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ModelDtoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/service/HttpRestClientTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +135,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.java in Projeto_de_Integracao_front_end">
+  <component name="RunManager" selected="JUnit.JsonDtoMapperTest.testGetDatabaseList01">
     <configuration name="ApiRestApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.eletra.ApiRestApplication" />
       <module name="Projeto_de_integracao_back_end" />
@@ -140,7 +149,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CategoryDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MainClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainClass" />
+      <module name="Projeto_de_Integracao_front_end" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategoryDtoTest.equalsTest04" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
@@ -150,37 +166,24 @@
       </extension>
       <option name="PACKAGE_NAME" value="model" />
       <option name="MAIN_CLASS_NAME" value="model.CategoryDtoTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="equalsTest04" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LineDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JsonDtoMapperTest.testGetDatabaseList01" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Projeto_de_Integracao_front_end" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.LineDtoTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ModelDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Projeto_de_Integracao_front_end" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ModelDtoTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.JsonDtoMapperTest" />
+      <option name="METHOD_NAME" value="testGetDatabaseList01" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -208,11 +211,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.java in Projeto_de_Integracao_front_end" />
-        <item itemvalue="JUnit.ModelDtoTest" />
-        <item itemvalue="JUnit.CategoryDtoTest" />
+        <item itemvalue="JUnit.JsonDtoMapperTest.testGetDatabaseList01" />
+        <item itemvalue="Application.MainClass" />
         <item itemvalue="Application.ApiRestApplication" />
-        <item itemvalue="JUnit.LineDtoTest" />
+        <item itemvalue="JUnit.java in Projeto_de_Integracao_front_end" />
+        <item itemvalue="JUnit.CategoryDtoTest.equalsTest04" />
       </list>
     </recent_temporary>
   </component>

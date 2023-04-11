@@ -30,4 +30,12 @@ public class CategoryDtoTest {
         assertNotEquals(category1, category2);
     }
 
+    @Test
+    public void equalsTest04(){
+        CategoryDto category1 = new CategoryDto(1, "Cronos Old", new LineDto(1, "Cronos"));
+        LineDto line1 = new LineDto(1, "Ares");
+
+        assertNotEquals(category1, line1);
+    }
+
 }

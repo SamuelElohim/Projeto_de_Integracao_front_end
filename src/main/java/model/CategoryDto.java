@@ -19,6 +19,10 @@ public class CategoryDto extends AbstractDtoObject {
 
     @Override
     public boolean equals(Object obj) {
+        if (!(obj instanceof CategoryDto)) {
+            return false;
+        }
+
         CategoryDto otherCategory = (CategoryDto) obj;
         return super.equals(obj) && line.equals(otherCategory.line);
     }

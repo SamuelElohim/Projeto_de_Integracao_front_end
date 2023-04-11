@@ -46,4 +46,13 @@ public class ModelDtoTest {
         assertNotEquals(model1, model2);
     }
 
+    @Test
+    public void equalsTest05(){
+        ModelDto model1 = new ModelDto(1, "Cronos 6001-A",
+                new CategoryDto(1, "Cronos Old", new LineDto(2, "Cronos")));
+        CategoryDto category1 = new CategoryDto(1, "Cronos Old", new LineDto(1, "Cronos"));
+
+        assertNotEquals(model1, category1);
+    }
+
 }
