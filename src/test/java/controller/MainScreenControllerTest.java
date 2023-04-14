@@ -6,7 +6,6 @@ import model.LineDto;
 import model.ModelDto;
 import org.junit.*;
 import org.junit.rules.ErrorCollector;
-import org.junit.runners.MethodSorters;
 import org.mockito.ArgumentCaptor;
 import org.mockito.MockedStatic;
 import org.testfx.framework.junit.ApplicationTest;
@@ -62,17 +61,9 @@ public class MainScreenControllerTest extends ApplicationTest {
 
         mc.initialize(null, null);
 
-        assertTrue(mc.titledPaneModels.isDisabled());
-    }
-
-    @Test
-    public void initializeTest03() {
-        doNothing().when(mc).fillLineSelectorComboBox();
-        mc.titledPaneModels.setDisable(false);
-
-        mc.initialize(null, null);
-
         verify(mc, times(1)).fillLineSelectorComboBox();
+        assertTrue("Check if initialize sets titledPaneModels to disabled",
+                mc.titledPaneModels.isDisabled());
     }
 
     @Test
@@ -111,7 +102,6 @@ public class MainScreenControllerTest extends ApplicationTest {
         mockConnection.when(() -> JsonDtoMapper.getDatabaseList(LineDto[].class, "linhas")).thenReturn(expected);
         mc.lineSelector.getItems().clear();
         mc.fillLineSelectorComboBox();
-        List<LineDto> actual = mc.lineSelector.getItems();
 
         mc.lineSelector.setValue(ares);
 
@@ -124,20 +114,12 @@ public class MainScreenControllerTest extends ApplicationTest {
     public void openTreeViewTest01() {
         doNothing().when(mc).fillTreeView();
 
-        mc.titledPaneModels.setDisable(true);
-        mc.openTreeView();
-        error.checkThat(mc.titledPaneModels.isDisabled(), is(false));
-        error.checkThat(mc.titledPaneModels.isExpanded(), is(true));
-    }
-
-    @Test
-    public void openTreeViewTest02() {
-        doNothing().when(mc).fillTreeView();
-
         mc.titledPaneModels.setExpanded(false);
         mc.openTreeView();
-        verify(mc, times(1)).fillTreeView();
 
+        error.checkThat(mc.titledPaneModels.isDisabled(), is(false));
+        error.checkThat(mc.titledPaneModels.isExpanded(), is(true));
+        verify(mc, times(1)).fillTreeView();
     }
 
     @Test
@@ -151,8 +133,10 @@ public class MainScreenControllerTest extends ApplicationTest {
 
         verify(mc).fillTreeItem(captor.capture());
 
-        error.checkThat(captor.getValue().isExpanded(), is(true));
-        assertEquals(mc.modelSelector.getRoot(), captor.getValue());
+        error.checkThat("Check if fillTreeView sets TreeItem to expanded",
+                captor.getValue().isExpanded(), is(true));
+        assertEquals("Check if fillTreeView sets TreeItem to the correct value",
+                mc.modelSelector.getRoot(), captor.getValue());
     }
 
     @Test
@@ -160,16 +144,67 @@ public class MainScreenControllerTest extends ApplicationTest {
         mc.lineSelector.setValue(new LineDto(1, "Ares"));
         doNothing().when(mc).fillTreeItem(any());
 
-        ArgumentCaptor<TreeItem> captor = ArgumentCaptor.forClass(TreeItem.class);
-
         mc.fillTreeView();
 
         verify(mc, times(1)).fillTreeView();
-
     }
 
     @Test
     public void fillTreeItemTest01() {
+        MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class);
+
+        LineDto cronos = new LineDto(2, "Cronos");
+
+        CategoryDto cronosOld = new CategoryDto(1, "Cronos Old", cronos);
+        CategoryDto cronosL = new CategoryDto(1, "Cronos L", cronos);
+
+        ModelDto cronos6001A = new ModelDto(1, "Cronos 6001-A", cronosOld);
+        ModelDto cronos6003 = new ModelDto(2, "Cronos 6003", cronosOld);
+        ModelDto cronos6021 = new ModelDto(4, "Cronos 6021", cronosL);
+        ModelDto cronos7023L = new ModelDto(5, "Cronos 7023L", cronosL);
+
+        List<CategoryDto> categoryDtosList = new ArrayList<>();
+        categoryDtosList.add(cronosOld);
+        categoryDtosList.add(cronosL);
+
+        List<ModelDto> cronosOldDtoModelsList = new ArrayList<>();
+        cronosOldDtoModelsList.add(cronos6001A);
+        cronosOldDtoModelsList.add(cronos6003);
+
+        List<ModelDto> cronosLDtoModelsList = new ArrayList<>();
+        cronosLDtoModelsList.add(cronos6021);
+        cronosLDtoModelsList.add(cronos7023L);
+
+        mockConnection.when(() -> getDatabaseList(CategoryDto[].class, "categorias", "Cronos"))
+                .thenReturn(categoryDtosList);
+        mockConnection.when(() -> getDatabaseList(ModelDto[].class, "modelos", "Cronos Old"))
+                .thenReturn(cronosOldDtoModelsList);
+        mockConnection.when(() -> getDatabaseList(ModelDto[].class, "modelos", "Cronos L"))
+                .thenReturn(cronosLDtoModelsList);
+
+        TreeItem<LineDto> root = new TreeItem<>(cronos);
+        mc.fillTreeItem(root);
+
+        TreeItem cronosOldTreeItem = new TreeItem("Cronos Old");
+        TreeItem cronosLTreeItem = new TreeItem("Cronos L");
+        cronosOldDtoModelsList.forEach(e -> cronosOldTreeItem.getChildren().add(new TreeItem<>(e)));
+        cronosLDtoModelsList.forEach(e -> cronosLTreeItem.getChildren().add(new TreeItem<>(e)));
+
+        List<TreeItem<LineDto>> expectedCategoryTreeItems = new ArrayList<>();
+        expectedCategoryTreeItems.add(cronosOldTreeItem);
+        expectedCategoryTreeItems.add(cronosLTreeItem);
+
+        List<TreeItem<LineDto>> actualCategoryTreeItems = new ArrayList<>(root.getChildren());
+
+        assertEquals(
+                "Check if category items are set correctly",
+                expectedCategoryTreeItems.toString(), actualCategoryTreeItems.toString());
+
+        mockConnection.close();
+    }
+
+    @Test
+    public void fillTreeItemTest02() {
         MockedStatic<JsonDtoMapper> mockConnection = mockStatic(JsonDtoMapper.class);
 
         LineDto cronos = new LineDto(2, "Cronos");
@@ -230,16 +265,10 @@ public class MainScreenControllerTest extends ApplicationTest {
                     .forEach(modelTreeItem -> actualModelTreeItems.append(modelTreeItem.toString()));
         });
 
-        assertEquals(
-                "Check if category items are set correctly",
-                expectedCategoryTreeItems.toString(), actualCategoryTreeItems.toString());
-
         assertEquals("Check if model items are set correctly",
                 expectedModelTreeItems.toString(), actualModelTreeItems.toString());
 
         mockConnection.close();
     }
-
-
 
 }
